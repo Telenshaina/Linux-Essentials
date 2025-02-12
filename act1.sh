@@ -3,9 +3,9 @@
 #ACTIVITY 1 - TELEN, SHAINA BLESSY  FEB 05 2025
 
 #Declare a variable
-NAME = "Name"
-AGE = "Age"
-PROGRAM = "Program"
+#NAME = "Name"
+#AGE = "Age"
+#PROGRAM = "Program"
 
 echo "Hello, $USER_NAME! Welcome to Bash scripting."
 

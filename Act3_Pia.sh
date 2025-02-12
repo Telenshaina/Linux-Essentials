@@ -1,0 +1,8 @@
+echo 'ENTER YOUR NAME:'
+read name
+echo 'ENTER YOUR AGE:'
+read age
+echo 'ENTER YOUR FAVOURITE PROGRAMMING LANGUAGE:'
+read favoritePL
+echo "THANK YOU $name, YOU ARE $age YEARS OLD AND YOUR FAVORITE 
+PROGRAMMING LANGUAGE IS $favoritePL."
