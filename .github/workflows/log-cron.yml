@@ -2,8 +2,7 @@ name: Log Time Job
 
 on:
   schedule:
-    - cron: "*/5 * * * *"  # Runs every 5 minutes
-  workflow_dispatch:  # Allows manual triggering
+    - cron: "*/30 * * * *"  # Runs every 30 minutes
 
 jobs:
   log_time:
@@ -18,10 +17,15 @@ jobs:
           chmod +x log_time.sh
           ./log_time.sh
 
+      - name: Run count script
+        run: |
+          chmod +x count_log.sh
+          ./count_log.sh
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add log.txt
-          git commit -m "Update log file with new timestamp" || echo "No changes to commit"
+          git commit -m "Update log file with new timestamp and update count" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
